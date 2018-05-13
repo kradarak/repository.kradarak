@@ -1,5 +1,114 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addons>
+<addon id="plugin.video.collegehumor" name="CollegeHumor" version="2.3.0" provider-name="Tristan Fischer (sphere@dersphere.de)">
+    <requires>
+        <import addon="xbmc.python" version="2.1.0"/>
+        <import addon="script.module.beautifulsoup" version="3.0.8"/>
+        <import addon="script.module.xbmcswift2" version="2.4.0"/>
+        <import addon="script.module.simplejson" version="2.0.10"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="addon.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <language>en</language>
+        <platform>all</platform>
+        <website>http://www.collegehumor.com</website>
+        <source>https://github.com/dersphere/plugin.video.collegehumor</source>
+        <forum>http://forum.xbmc.org/showthread.php?tid=110950</forum>
+        <email>sphere@dersphere.de</email>
+        <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+        <summary lang="ar">مشاهده المقاطع المرئيه من الموقع الشهير collegehumor.com</summary>
+        <summary lang="be">Watch videos from www.collegehumor.com</summary>
+        <summary lang="bg">Гледайте видеа от www.collegehumor.com</summary>
+        <summary lang="ca">Mira vídeos de www.collegehumor.com</summary>
+        <summary lang="da">Se videoer fra www.collegehumor.com</summary>
+        <summary lang="de">Schau Videos von collegehumor.com</summary>
+        <summary lang="el">Παρακολουθήστε βίντεο από το www.collegehumor.com</summary>
+        <summary lang="en">Watch videos from www.collegehumor.com</summary>
+        <summary lang="es">Videos de www.collegehumor.com</summary>
+        <summary lang="es_MX">Mira videos desde www.collegehumor.com</summary>
+        <summary lang="fa_IR">تماشای ویدیو از www.collegehumor.com</summary>
+        <summary lang="fi">Katso www.collegehumor.comin videoita</summary>
+        <summary lang="fr">Regarder les vidéos de www.collegehumor.com</summary>
+        <summary lang="fr_CA">Regarder des vidéos provenant de www.collegehumor.com</summary>
+        <summary lang="gl">Ver vídeos de www.collegehumor.com</summary>
+        <summary lang="he">צפה בסרטונים מ-www.collegehumor.com</summary>
+        <summary lang="hr">Pogledajte video snimke sa www.collegehumor.com</summary>
+        <summary lang="hu">Videók megtekintése a www.collegehumor.com oldalról</summary>
+        <summary lang="id">Tonton video dari www.collegehumor.com</summary>
+        <summary lang="it">Guarda i video da www.collegehumor.com</summary>
+        <summary lang="ko">www.collegehumor.com의 비디오 시청</summary>
+        <summary lang="lt">Žiūrėti vaizdo įrašus iš www.collegehumor.com</summary>
+        <summary lang="nl">Bekijk video's van www.collegehumor.com</summary>
+        <summary lang="pl">Oglądaj filmy z www.collegehumor.com</summary>
+        <summary lang="pt">Veja vídeos de www.collegehumor.com</summary>
+        <summary lang="pt_BR">Assista vídeos de www.collegehumor.com</summary>
+        <summary lang="ro">Urmărește videoclipuri de pe www.collegehumor.com</summary>
+        <summary lang="sk">Pozerajte videá z www.collegehumor.com</summary>
+        <summary lang="sv">Titta på videor från www.collegehumor.com</summary>
+        <summary lang="zh">观看来自www.collegehumor.com的视频</summary>
+        <description lang="ar">كوليجهومر يجد مقاطع مرئيه طريفه من الشبكه العنكبوتيه باﻹضافه الى بعض المقاطع التى صنعوها بأنفسهم</description>
+        <description lang="be">CollegeHumor finds funny videos from all over the internet plus some original videos that they made themself.</description>
+        <description lang="bg">В CollegeHumor можете да намерите смешни видеа от най-различни сайтове, а някои са дело на екипа на сайта.</description>
+        <description lang="ca">CollegeHumor troba vídeos divertits en tota la xarxa de internet, a més de material original realitzat per ells mateixos.</description>
+        <description lang="da">CollegeHumor finder sjove videoer fra hele internettet, plus nogle originale videoer de selv har lavet.</description>
+        <description lang="de">CollegeHumor findet lustige Videos aus dem gesamten Internet plus ein paar Videos von den Machern selbst.</description>
+        <description lang="el">Το CollegeHumor βρίσκει αστεία βίντεο από όλο το Διαδίκτυο καθώς και πρωτότυπα βίντεο που έκαναν οι ίδιοι.</description>
+        <description lang="en">CollegeHumor finds funny videos from all over the internet plus some original videos that they made themself.</description>
+        <description lang="es">CollegeHumor busca videos divertidos por todo internet además de algunos videos originales hechos por ellos mismos.</description>
+        <description lang="es_MX">CollegeHumor encuentra videos chistosos desde toda la internet mas algunos videos originales hechos por ellos mismos.</description>
+        <description lang="fa_IR">CollegeHumor ویدیو های سرگرم کننده از سرتاسر اینترنت پیدا می کند به علاوه ویدیو های اورجینالی نیز خودش می سازد.</description>
+        <description lang="fr">CollegeHumor trouve les vidéos drôles depuis internet et aussi quelques vidéos originales faîtes par eux-mêmes.</description>
+        <description lang="fr_CA">CollegeHumor trouvent des vidéos drôles partout sur internet ainsi que des vidéos originales qu'ils ont faites eux-mêmes.</description>
+        <description lang="gl">CollegeHumor busca vídeos divertidos por todo internet máis algúns vídeos orixinais feitos por eles.</description>
+        <description lang="he">CollegeHumor מציע סרטונים מצחיקים מכל רחבי הרשת וכאלה שיחודיים לאתר.</description>
+        <description lang="hr">CollegeHumor pronalazi zabavne video snimke sa cijelog Interneta plus neke izvorne video snimke koje su dodali sami.</description>
+        <description lang="hu">A CollegeHumor vicces videókat talál az interneten, valamint bemutat néhány saját készítésűt is.</description>
+        <description lang="id">CollegeHumor mencari video-video lucu dari seluruh jagat internet ditambah beberapa video orisinil yang dibuat sendiri.</description>
+        <description lang="it">College Humor trova video divertenti da internet ed in più alcuni autoprodotti.</description>
+        <description lang="ko">CollegeHumor은 인터넷의 재미있는 동영상과 자체 제작한 동영상을 제공합니다.</description>
+        <description lang="lt">CollegeHumor randa linksmus vaizdo įrašus visame internete plius kai kuriuos originalius vaizdo įrašus katruos jie sukūrė patys.</description>
+        <description lang="nl">CollegeHumor vind grappige video's van overal op het internet plus sommige originele video's die ze zelf hebben gemaakt.</description>
+        <description lang="pl">Collegehumor wyszukuje śmieszne filmy z całego internetu plus kilka oryginalnych filmów, które są wykonane przez ekipę Collegehumor.</description>
+        <description lang="pt">O CollegeHumor reúne vídeos hilariantes encontrados na internet e acrescenta ainda alguns vídeos feitos pela equipa do site.</description>
+        <description lang="pt_BR">CollegeHumor encontra vídeos engraçados de toda a internet além de alguns vídeos originais produzidos por eles mesmos.</description>
+        <description lang="ro">Pe CollegeHumor sunt găzduite videoclipuri comice de pe internet plus unele făcute chiar de ei.</description>
+        <description lang="sk">CollegeHumor vyhľadáva zábavné videá po celom internete a pridáva originálne videá z vlastnej produkcie.</description>
+        <description lang="sv">CollegeHumer hittar roliga vidoer från hela internet plus några originella videor som dom producerat själva.</description>
+        <description lang="zh">CollegeHumor收集网上的搞笑视频和一些网站原创制作的视频。</description>
+    </extension>
+</addon>
+
+<addon id="plugin.video.comedycentral" version="1.0.2" name="Comedy Central" provider-name="Lunatixz">
+    <requires>
+        <import addon="xbmc.python" version="2.25.0"/>
+        <import addon="script.module.simplecache" version="1.0.0"/>
+        <import addon="script.module.youtube.dl" version="17.0.0"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en_GB">Watch full episodes and clips from your favorite Comedy Central shows.</summary>
+        <description lang="en_GB">Comedy Central brings you the funniest stuff on the planet. Watch hit shows like Workaholics, Tosh.0, The Daily Show with Trevor Noah, Key and Peele @midnight and Broad City, plus cutting-edge stand-up comedy you won't find anywhere else. Head to CC.com for full episodes, exclusives, previews and more.</description>
+        <platform>all</platform>
+        <license>GNU GENERAL PUBLIC LICENSE. Version 3, June 2007</license>
+        <source>https://github.com/Lunatixz/KODI_Addons/tree/master/plugin.video.comedycentral</source>
+        <website>http://www.cc.com/</website>
+        <news>v1.0.1[CR]-Added Featured Shows and Increased content size to include All Shows.</news>
+        <forum>https://forum.kodi.tv/showthread.php?tid=326986</forum>
+        <assets>
+            <icon>resources/images/icon.png</icon>
+            <fanart>resources/images/fanart.jpg</fanart>
+            <screenshot>resources/images/screenshot01.png</screenshot>
+            <screenshot>resources/images/screenshot02.png</screenshot>
+            <screenshot>resources/images/screenshot03.png</screenshot>
+            <screenshot>resources/images/screenshot04.png</screenshot>
+        </assets>
+    </extension>
+</addon>
+
 <addon id="plugin.video.covenant" version="1.1.30" name="Covenant" provider-name="Covenant">
 	<requires>
 		<import addon="xbmc.python" version="2.19.0" />
@@ -40,6 +149,113 @@
 	</extension>
 </addon>
 
+<addon id="plugin.video.exodus" version="4.2.00" name="Exodus" provider-name="Exodus">
+	<requires>
+		<import addon="xbmc.python" version="2.19.0" />
+		<import addon="script.module.exodus" />
+		<import addon="script.exodus.artwork" version="1.0.0" />
+		<import addon="script.exodus.metadata" version="1.0.0" />
+		<import addon="script.module.urlresolver" version="3.0.0" />
+		<import addon="script.module.requests" />
+		<import addon="script.module.metahandler" version="1.0.0" />
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="exodus.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="xbmc.service" library="service.py" start="startup" />
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">Exodus</summary>
+		<platform>all</platform>
+		<license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+    			<screenshot>resources/screenshots/screenshot-01.jpg</screenshot>
+    			<screenshot>resources/screenshots/screenshot-02.jpg</screenshot>
+    			<screenshot>resources/screenshots/screenshot-03.jpg</screenshot>
+		</assets>
+		<news></news>
+	</extension>
+</addon>
+
+<addon id="plugin.video.neptune" version="1.3.9" name=" Neptune Rising" provider-name="Mr. Blamo">
+	<requires>
+		<import addon="xbmc.python" version="2.19.0" />
+		<import addon="script.neptune.artwork" />
+		<import addon="script.neptune.metadata" />
+                <import addon="script.module.resolveurl"/>
+                <import addon="script.module.metahandler"/>
+                <import addon="script.module.requests"/>
+                <import addon="script.module.beautifulsoup"/>
+                <import addon="script.module.schism.common"/>
+                <import addon="script.module.futures"/>
+        		<import addon="script.module.universalscrapers" version="1.0.0" />
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="neptune.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="xbmc.service" library="service.py" start="startup" />
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">Neptune Rising</summary>
+		<description lang="en">Movie, TV Show, and Playlist Add-on</description>
+        <disclaimer lang="en">The author is not responsible for the use of this addon. The author is not responsible for the content found using this addon. The author does not host or own any content found within this addon.
+The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation.
+This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works.
+</disclaimer>
+		<platform>all</platform>
+		<license>Beerware rev. 42</license>
+		<platform>all</platform>
+		<forum></forum>
+		<website></website>
+		<source></source>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+		</assets>
+		<news></news>
+	</extension>
+</addon>
+
+    <addon id="repository.blamo" name="[COLOR red]Blamo Repo[/COLOR]" version="0.1.3" provider-name="Mr Blamo">
+        <requires>
+            <import addon="xbmc.addon" version="12.0.0"/>
+        </requires>
+        <extension point="xbmc.addon.repository" name="[COLOR red]Blamo Repo[/COLOR]">
+            <dir>
+			<info compressed="false">https://raw.githubusercontent.com/MrBlamo420/Project/master/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/MrBlamo420/Project/master/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/MrBlamo420/Project/master/zips/</datadir>
+            <hashes>false</hashes>
+			</dir>
+            <dir>
+                <info compressed="false">https://raw.githubusercontent.com/marcelveldt/repository.marcelveldt/master/addons.xml</info>
+                <checksum>https://raw.githubusercontent.com/marcelveldt/repository.marcelveldt/master/addons.xml.md5</checksum>
+                <datadir zip="true">https://raw.githubusercontent.com/marcelveldt/repository.marcelveldt/master/</datadir>
+            </dir>
+            <dir>
+                <info compressed="false">https://raw.githubusercontent.com/jsergio123/zips/master/addons.xml</info>
+                <checksum>https://raw.githubusercontent.com/jsergio123/zips/master/addons.xml.md5</checksum>
+                <datadir zip="true">https://raw.githubusercontent.com/jsergio123/zips/master/</datadir>
+            </dir>
+            <dir>
+                <info compressed="false">https://raw.githubusercontent.com/totalrevolution/python-koding/master/zips/addons.xml</info>
+                <checksum>https://raw.githubusercontent.com/totalrevolution/python-koding/master/zips/addons.xml.md5</checksum>
+                <datadir zip="true">https://raw.githubusercontent.com/totalrevolution/python-koding/master/zips/</datadir>
+            </dir>
+			<dir>
+                <info compressed="false">https://raw.githubusercontent.com/teamuniversal/scrapers/master/_modules4all/zips/addons.xml</info>
+                <checksum>https://raw.githubusercontent.com/teamuniversal/scrapers/master/_modules4all/zips/addons.xml.md5</checksum>
+                <datadir zip="true">https://raw.githubusercontent.com/teamuniversal/scrapers/master/_modules4all/zips/</datadir>
+            </dir>
+        </extension>
+        <extension point="xbmc.addon.metadata">
+            <summary>The Official Repo for Mr Blamo</summary>
+            <description>The Official Repo for Mr Blamo</description>
+            <platform>all</platform>
+            <genre>movies,usa</genre>
+        </extension>
+    </addon>
+
 <addon id="repository.kradarak" name="Kradaraks Repository" version="0.0.1" provider-name="Kradarak">
 	<extension point="xbmc.addon.repository" name="Kradaraks Repository">
 		<dir>
@@ -56,5 +272,73 @@
 		<description lang="en">Kradaraks Repository</description>
 		<genre></genre>
 	</extension>
+</addon>
+
+<addon id="repository.xvbmc" name=" [COLOR lime][B]X[/B][/COLOR]vBMC (Add-ons) REPOsitory" version="4.2.1" provider-name="XvBMC Nederland">
+    <extension point="xbmc.addon.repository" name=" [COLOR lime][B]X[/B][/COLOR]vBMC (Add-ons) REPOsitory">
+        <dir>
+            <info compressed="false">https://raw.githubusercontent.com/teamuniversal/scrapers/master/_modules4all/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/teamuniversal/scrapers/master/_modules4all/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/teamuniversal/scrapers/master/_modules4all/zips/</datadir>
+            <hashes>false</hashes>
+        </dir>
+    <!--<dir>
+            <info compressed="false">https://raw.githubusercontent.com/noobsandnerds/modules4all/master/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/noobsandnerds/modules4all/master/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/noobsandnerds/modules4all/master/zips/</datadir>
+        </dir>-->
+        <dir>
+            <info compressed="false">https://raw.githubusercontent.com/jsergio123/zips/master/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/jsergio123/zips/master/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/jsergio123/zips/master/</datadir>
+        </dir>
+        <dir>
+            <info compressed="false">https://github.com/tvaddonsco/tva-resolvers-repo/raw/master/addons.xml</info>
+            <checksum>https://github.com/tvaddonsco/tva-resolvers-repo/raw/master/addons.xml.md5</checksum>
+            <datadir zip="true">https://github.com/tvaddonsco/tva-resolvers-repo/raw/master/zips/</datadir>
+        </dir>
+        <dir>
+            <info compressed="false">https://raw.githubusercontent.com/XvBMC/repository.xvbmc/master/Dependencies/xvbmc-addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/XvBMC/repository.xvbmc/master/Dependencies/xvbmc-addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/XvBMC/repository.xvbmc/master/Dependencies/zips/</datadir>
+            <hashes>false</hashes>
+        </dir>
+        <dir>
+            <info compressed="false">https://raw.githubusercontent.com/XvBMC/repository.xvbmc/master/Look-and-Feel/xvbmc-addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/XvBMC/repository.xvbmc/master/Look-and-Feel/xvbmc-addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/XvBMC/repository.xvbmc/master/Look-and-Feel/zips/</datadir>
+            <hashes>false</hashes>
+        </dir>
+        <dir>
+            <info compressed="false">https://raw.githubusercontent.com/XvBMC/repository.xvbmc/master/REPOsitory/xvbmc-addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/XvBMC/repository.xvbmc/master/REPOsitory/xvbmc-addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/XvBMC/repository.xvbmc/master/REPOsitory/zips/</datadir>
+            <hashes>false</hashes>
+        </dir>
+            <info compressed="false">https://raw.githubusercontent.com/XvBMC/repository.xvbmc/master/xvbmc-addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/XvBMC/repository.xvbmc/master/xvbmc-addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/XvBMC/repository.xvbmc/master/zips/</datadir>
+            <hashes>false</hashes>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">XvBMC The Netherlands (Add-ons) REPOsitory #DUTCH #NL</summary>
+        <summary lang="nl">XvBMC Nederland (Add-ons) REPOsitory #NL #DUTCH</summary>
+        <description lang="en">XvBMC The Netherlands (Add-ons) Repository | XvBMC-NL (Add-on) Depot  |  be sure to check out our FB-page: http://bit.ly/XvBMC-NL !!! USE AT YOUR OWN RISK !!!</description>
+        <description lang="nl">XvBMC Nederland (Add-ons) Repository | XvBMC-NL (Add-on) Depot  |  en volg zeker ook onze Facebook pagina: http://bit.ly/XvBMC-NL !!! USE AT YOUR OWN RISK !!!</description>
+        <disclaimer lang="en">The owners and submitters to this repository do not host or distribute any of the content displayed by these add-ons nor do they have any affiliation with its content. Please Read: https://raw.githubusercontent.com/XvBMC/repository.xvbmc/master/LICENSE ...just because you can  ;)  !!! USE-AT-YOUR-OWN-RISK !!!</disclaimer>
+        <disclaimer lang="nl">The owners and submitters to this repository do not host or distribute any of the content displayed by these add-ons nor do they have any affiliation with its content. Please Read: https://raw.githubusercontent.com/XvBMC/repository.xvbmc/master/LICENSE ...just because you can  ;)  !!! USE-AT-YOUR-OWN-RISK !!!</disclaimer>
+        <platform>all</platform>
+        <license>GNU GENERAL PUBLIC LICENSE. Version 3, June 2007</license>
+        <forum>https://www.fb.com/groups/XvBMCnederland/</forum>
+        <website>http://bit.ly/XvBMC-NL</website>
+        <source>https://archive.org/download/repository.xvbmc/</source>
+        <size>946176</size>
+        <news>Release v4.2.1 Mo' XvBMC VoOdOo...</news>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+            <screenshot>xbmc.png</screenshot>
+        </assets>
+    </extension>
 </addon>
 </addons>
